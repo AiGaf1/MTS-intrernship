@@ -9,4 +9,7 @@ A left wrist detector
 
 ![resultgirl](https://user-images.githubusercontent.com/33295142/105380064-8bd99980-5c1e-11eb-854d-95ed328f8485.gif)
 
+![result](https://user-images.githubusercontent.com/33295142/105380311-ca6f5400-5c1e-11eb-9855-dc0b24b65313.gif)
+
+
 
