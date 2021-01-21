@@ -8,9 +8,9 @@ A Human detector
 A left wrist detector
 
 Видео взял отсюда https://www.youtube.com/watch?v=whZwZ8jeq5E&ab_channel=StarTJ
-# Чтобы запустит файл нужно запустить через терминал и ввести
+#### Чтобы запустит файл нужно запустить через терминал и ввести
 
-python main.py --input "path to video"
+python detect_wrist.py --input "path to video"
 
 ![resultgirl](https://user-images.githubusercontent.com/33295142/105380064-8bd99980-5c1e-11eb-854d-95ed328f8485.gif)
 
