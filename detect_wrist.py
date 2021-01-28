@@ -1,7 +1,7 @@
 import cv2 as cv
 import numpy as np
 import argparse
-
+import os 
 
 BODY_PARTS = { "Nose": 0, "Neck": 1, "RShoulder": 2, "RElbow": 3, "RWrist": 4,
                "LShoulder": 5, "LElbow": 6, "LWrist": 7, "RHip": 8, "RKnee": 9,
@@ -13,7 +13,7 @@ POSE_PAIRS = [ ["Neck", "RShoulder"], ["Neck", "LShoulder"], ["RShoulder", "RElb
                ["LHip", "LKnee"], ["LKnee", "LAnkle"], ["Neck", "Nose"], ["Nose", "REye"],
                ["REye", "REar"], ["Nose", "LEye"], ["LEye", "LEar"] ]
 
-
+OUTVIDEONAME = "result.avi"
 net = cv.dnn.readNetFromTensorflow("graph_opt.pb")
 
 def poseDetector(frame):
@@ -74,7 +74,7 @@ def cropHands(points):
 
     # output
     fourcc = cv.VideoWriter_fourcc(*'XVID')
-    out = cv.VideoWriter('result.avi', fourcc, fps, (w, h))
+    out = cv.VideoWriter(OUTVIDEONAME, fourcc, fps, (w, h))
 
     while(cap.isOpened()):
         ret, frame = cap.read()
@@ -89,8 +89,9 @@ def cropHands(points):
             crop_frame = frame[y:y+h, x:x+w]
 
             # Percentage
-            xx = cnt *100/frames
-            print(int(xx),'%')
+            #xx = cnt *100/frames
+            #print(int(xx),'%')
+
 
             out.write(crop_frame)
         else:
@@ -139,6 +140,47 @@ def argsParser():
 
     return args
 
+def get_gray_images():
+
+    # Read the video from specified path 
+    cam = cv.VideoCapture(OUTVIDEONAME) 
+  
+    try: 
+
+        # creating a folder named data 
+        if not os.path.exists('images'): 
+            os.makedirs('images') 
+  
+    # if not created then raise error 
+    except OSError: 
+        print ('Error: Creating directory of data') 
+  
+    # frame 
+    currentframe = 0
+  
+    while(True): 
+      
+        # reading from frame 
+        ret,frame = cam.read() 
+  
+        if ret: 
+            # if video is still left continue creating images 
+            name = './images/frame' + str(currentframe) + '.jpg'
+            print ('Creating...' + name) 
+  
+            # writing the extracted images 
+            gray = cv.cvtColor(frame, cv.COLOR_BGR2GRAY)
+            cv.imwrite(name, gray) 
+  
+            # increasing counter so that it will 
+            # show how many frames are created 
+            currentframe += 1
+        else: 
+            break
+  
+    cam.release() 
+    cv.destroyAllWindows()
+
 if __name__ == "__main__":
     args = argsParser()
     inWidth = args.width
@@ -154,3 +196,4 @@ if __name__ == "__main__":
     brokenWristPoints = getWristPoints()
     fixedPoints = fixPoints(brokenWristPoints)
     cropHands(fixedPoints)
+    get_gray_images() 
