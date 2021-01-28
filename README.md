@@ -16,5 +16,9 @@ python detect_wrist.py --input "path to video"
 
 ![result](https://user-images.githubusercontent.com/33295142/105380311-ca6f5400-5c1e-11eb-9855-dc0b24b65313.gif)
 
+После обрезки видео программа выводит все кадры видео в черно-белые фото
+![frame74](https://user-images.githubusercontent.com/33295142/106120339-532e4880-6167-11eb-92f2-cf0d9798d166.jpg)
+
+
 
 
