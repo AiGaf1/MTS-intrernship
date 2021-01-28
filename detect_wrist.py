@@ -92,7 +92,6 @@ def cropHands(points):
             xx = cnt *100/frames
             print(int(xx),'%')
 
-            # I see the answer now. Here you save all the video
             out.write(crop_frame)
         else:
             break
