@@ -38,10 +38,11 @@ $ pip3 install -r requirements.txt
 ```
 $ pip install tensorflow==1.13.2
 ```
-#### Шаг3. Запустить программы
+
+#### Шаг3. Запустить программу
 
 ```
-$ python run_webcam.py --model=mobilenet_thin --resize=432x368 --camera=0
+$ python demo_camera_V2.0.py --model=mobilenet_thin --resize=432x368 --camera=0
 ```
 
 
