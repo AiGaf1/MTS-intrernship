@@ -22,6 +22,22 @@ python detect_wrist.py --input "path to video"
 
 ![frame74](https://user-images.githubusercontent.com/33295142/106120339-532e4880-6167-11eb-92f2-cf0d9798d166.jpg)
 
+## Новая версия 
+### Чтобы запустить demo_camera_V2.0.py нужно склонировать библиотеку с другого репозитория
+
+### Клонирование и  установка зависимостей
+
+```bash
+$ git clone https://github.com/SyBorg91/pose-estimation-detection
+$ cd pose-estimation-detection
+$ pip3 install -r requirements.txt
+```
+
+### Запустить программы
+
+```
+$ python run_webcam.py --model=mobilenet_thin --resize=432x368 --camera=0
+```
 
 
 
