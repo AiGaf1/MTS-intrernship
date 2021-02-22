@@ -14,8 +14,8 @@ import PyQt5
 
 
 fps_time = 0
-minusX = 110
-minusY = 150
+minusX = 60
+minusY = 100
 H = 224
 W = 224
 
@@ -35,35 +35,30 @@ gesture_names = {0: 'Fist',
 model = load_model('/home/aigaf/Desktop/MTS-Internship/models/VGG_cross_validated.h5')
 
 
-def predict_rgb_image(img):
-    result = gesture_names[model.predict_classes(img)[0]]
-    print(result)
-    return (result)
-
-
 def predict_rgb_image_vgg(image):
     image = np.array(image, dtype='float32')
     image /= 255
     pred_array = model.predict(image)
-    #print(f'pred_array: {pred_array}')
+    print(f'pred_array: {pred_array}')
     result = gesture_names[np.argmax(pred_array)]
-    #print(f'Result: {result}')
-    #print(max(pred_array[0]))
+    print(f'Result: {result}')
+    print(max(pred_array[0]))
     score = float("%0.2f" % (max(pred_array[0]) * 100))
     print(result)
     return result, score
 
 
-#cap_region_x_begin = 0.5  # start point/total width
-#cap_region_y_end = 0.8  # start point/total width
+
 threshold = 60  # binary threshold
 blurValue = 41  # GaussianBlur parameter
-#bgSubThreshold = 50
-#learningRate = 0
-#isBgCaptured = 1  # bool, whether the background captured
-#triggerSwitch = False  # if true, keyboard simulator works
-#prediction_arr = []
 
+
+def timeAlarm(array, flag):
+    if len(humans) != 0 and flag == True:
+        futureTime = time.time() + 10
+        flag = False
+        return futureTime, flag
+    return futureTime, 
 
 def cropHands(points, frame):
     # define croping values
@@ -104,18 +99,22 @@ if __name__ == '__main__':
     cam = cv2.VideoCapture(0)
 
     currentframe = 0
+    flag = True
+
     while True:
     
         ret_val, image1 = cam.read()
-        
         humans = e.inference(image1, resize_to_default=(w > 0 and h > 0), upsample_size=4.0)
-
         img = TfPoseEstimator.draw_humans(image1, humans, imgcopy=True)
         
+        if len(humans) != 0 and flag == True: # Time alarm
+            future = time.time() + 10
+            flag = False
+
+        now = time.time()
+
         for human in humans:
             for i in human.body_parts.keys():
-                now = time.time()
-                future = now + 10
                 
                 if i == 7:
                     
@@ -140,16 +139,29 @@ if __name__ == '__main__':
                     #    (255, 255, 255))
                     #cv2.putText(thresh, f"Action: {action}", (50, 80), cv2.FONT_HERSHEY_SIMPLEX, 1,
                     #    (255, 255, 255))
+
                     target = np.stack((thresh,) * 3, axis=-1)
                     target = cv2.resize(target, (224, 224))
                     target = target.reshape(1, 224, 224, 3)
 
                     prediction, score = predict_rgb_image_vgg(target)
-                    
-                    if score > 0.99 and prediction == 'Fist':
-                        print("Разгрузка")
-
-                    #prediction_arr.append(prediction)
+                    """
+                    if score == 100 and prediction == 'Fist':
+                        print("Fist_99")
+                        print(score)
+                    elif score > 95 and prediction == 'Okay':
+                        print("Okay_99")
+                        print(score)
+                    """
+                    #elif score > 99 and prediction == 'L':
+                    #    print("L_99")
+                    #    print(score)
+                    #elif score > 99 and prediction == 'Palm':
+                     #   print("Palm_99")
+                     #   print(score)
+                    #eliif score > 99 and prediction == 'Okay':
+                     #   print("Okay_99")
+                     #   print(score)
 
                 elif now > future:
                     print("ALERT")
