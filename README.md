@@ -10,7 +10,7 @@ A Human detector
 Видео взял отсюда https://www.youtube.com/watch?v=whZwZ8jeq5E&ab_channel=StarTJ
 #### Чтобы запустит файл нужно запустить через терминал в папке, где находится python файл и ввести
 
-'''
+'''bash
 python demo_camera_V2.0.py
 '''
 
