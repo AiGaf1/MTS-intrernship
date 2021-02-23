@@ -24,7 +24,6 @@ python demo_camera_V2.0.py
 
 ![frame74](https://user-images.githubusercontent.com/33295142/106120339-532e4880-6167-11eb-92f2-cf0d9798d166.jpg)
 
-## Новая версия 
 ### Чтобы запустить demo_camera_V2.0.py произведем следующие шаги:
 
 #### Шаг 1. Клонирование и  установка зависимостей
