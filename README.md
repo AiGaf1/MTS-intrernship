@@ -5,7 +5,7 @@ A Human detector
 
 ![ans](https://user-images.githubusercontent.com/33295142/104318277-3c91bb80-54f0-11eb-98c3-95bfb70233c3.gif)
 
-# A left wrist detector
+# A wrist detector
 
 Видео взял отсюда https://www.youtube.com/watch?v=whZwZ8jeq5E&ab_channel=StarTJ
 #### Чтобы запустит файл нужно запустить через терминал в папке, где находится python файл и ввести
