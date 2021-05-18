@@ -1,18 +1,16 @@
 # MTS-intrernship
 ## Human detector
 
-Видео взял отсюда https://www.youtube.com/watch?v=6ueyBesTxTQ&ab_channel=UcchashSarkar
+Video https://www.youtube.com/watch?v=6ueyBesTxTQ&ab_channel=UcchashSarkar
 
 ![ans](https://user-images.githubusercontent.com/33295142/104318277-3c91bb80-54f0-11eb-98c3-95bfb70233c3.gif)
 
-![Peek 2021-02-21 21-45](https://user-images.githubusercontent.com/33295142/118702255-5e43dc00-b81d-11eb-9c64-7807941d878b.gif)
 
 
 ## Wrist detector
 
-Видео взял отсюда https://www.youtube.com/watch?v=whZwZ8jeq5E&ab_channel=StarTJ
-#### Чтобы запустит файл нужно через терминал в папке, где находится python файл и ввести
-
+Video https://www.youtube.com/watch?v=whZwZ8jeq5E&ab_channel=StarTJ
+#### To run the project
 ```bash
 python demo_camera_V2.0.py
 ```
@@ -26,6 +24,10 @@ python demo_camera_V2.0.py
 После обрезки видео программа выводит все кадры в черно-белые фото
 
 ![frame74](https://user-images.githubusercontent.com/33295142/106120339-532e4880-6167-11eb-92f2-cf0d9798d166.jpg)
+
+### Result
+
+![Peek 2021-02-21 21-45](https://user-images.githubusercontent.com/33295142/118702255-5e43dc00-b81d-11eb-9c64-7807941d878b.gif)
 
 ### Чтобы запустить demo_camera_V2.0.py произведем следующие шаги:
 
