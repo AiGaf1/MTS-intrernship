@@ -5,6 +5,9 @@
 
 ![ans](https://user-images.githubusercontent.com/33295142/104318277-3c91bb80-54f0-11eb-98c3-95bfb70233c3.gif)
 
+![Peek 2021-02-21 21-45](https://user-images.githubusercontent.com/33295142/118702255-5e43dc00-b81d-11eb-9c64-7807941d878b.gif)
+
+
 ## Wrist detector
 
 Видео взял отсюда https://www.youtube.com/watch?v=whZwZ8jeq5E&ab_channel=StarTJ
