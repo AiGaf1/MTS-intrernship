@@ -21,7 +21,7 @@ python demo_camera_V2.0.py
 
 
 
-После обрезки видео программа выводит все кадры в черно-белые фото
+After cutting a video program returns all shots in black and white mode.
 
 ![frame74](https://user-images.githubusercontent.com/33295142/106120339-532e4880-6167-11eb-92f2-cf0d9798d166.jpg)
 
@@ -29,9 +29,9 @@ python demo_camera_V2.0.py
 
 ![Peek 2021-02-21 21-45](https://user-images.githubusercontent.com/33295142/118702255-5e43dc00-b81d-11eb-9c64-7807941d878b.gif)
 
-### Чтобы запустить demo_camera_V2.0.py произведем следующие шаги:
+### T run demo_camera_V2.0.py make next steps:
 
-#### Шаг 1. Клонирование и  установка зависимостей
+#### Шаг 1. Clone and install all requirements
 
 ```bash
 $ git clone https://github.com/SyBorg91/pose-estimation-detection
@@ -40,12 +40,12 @@ $ pip3 install -r requirements.txt
 ```
 
 
-#### Шаг 2. Поменять версию tensorflow на 1.13.2
+#### Шаг 2. Change version tensorflow to 1.13.2
 ```
 $ pip install tensorflow==1.13.2
 ```
 
-#### Шаг3. Запустить программу
+#### Шаг3. Run the program
 
 ```
 $ python demo_camera_V2.0.py --model=mobilenet_thin --resize=432x368 --camera=0
