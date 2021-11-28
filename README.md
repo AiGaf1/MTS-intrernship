@@ -29,7 +29,7 @@ After cutting a video program returns all shots in black and white mode.
 
 ![Peek 2021-02-21 21-45](https://user-images.githubusercontent.com/33295142/118702255-5e43dc00-b81d-11eb-9c64-7807941d878b.gif)
 
-### T run demo_camera_V2.0.py make next steps:
+### To run demo_camera_V2.0.py make next steps:
 
 #### Шаг 1. Clone and install all requirements
 
